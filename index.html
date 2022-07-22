@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <body>
+	<h2>Website to compare Siemens parts</h2>
+    <h3>Enter Both Part Number here</h3>
+
+    <input type="text" id="myText" title="MLFB1" placeholder="MLFB1">
+    <input type="text" id="myText2" title="MLFB2" placeholder="MLFB2">
+
+    <button onclick="myFunction()">Compare Parts</button>
+
+    <p id="demo"></p>
+
+    <script>
+    function myFunction() {
+        var x = document.getElementById("myText").value.replace(/\s/g, '');
+        var y = document.getElementById("myText2").value.replace(/\s/g, '');
+		var URL = "https://mall.industry.siemens.com/goos/catalog/Pages/mmpdata.ashx?lang=en&MLFB1=" + x + "&MLFB2=" + y;
+
+		document.getElementById("demo").innerHTML = "<a href=https://mall.industry.siemens.com/goos/catalog/Pages/mmpdata.ashx?lang=en&MLFB1=" + x + "&MLFB2=" + y + ">"+URL+"</a>" ;
+		
+		setTimeout(() => {  
+			console.log("World!");
+			window.open(URL);
+		}, 1000);
+		
+       
+	}
+    </script>
+
+    </body>
+</html>
